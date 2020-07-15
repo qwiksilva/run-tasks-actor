@@ -7,7 +7,7 @@
       "title": "Tasks",
       "type": "array",
       "description": "Enter the tasks you want to run.",
-      "editor": "requestListSources"
+      "editor": "stringList"
     },
     "apiEndpoint": {
       "title": "API Endpoint",
