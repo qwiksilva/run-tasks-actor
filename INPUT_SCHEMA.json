@@ -1,12 +1,18 @@
 {
-  "title": "Input schema for the apify/quick-start actor.",
+  "title": "Input schema for qwiksilva/run-tasks actor.",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
-    "message": {
-      "title": "Message",
+    "tasks": {
+      "title": "Tasks",
+      "type": "array",
+      "description": "Enter the tasks you want to run.",
+      "editor": "requestListSources"
+    },
+    "apiEndpoint": {
+      "title": "API Endpoint",
       "type": "string",
-      "description": "Just enter your hello world message.",
+      "description": "URL for where you want to send the data to",
       "editor": "textfield"
     }
   },
