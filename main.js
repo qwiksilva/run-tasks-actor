@@ -17,7 +17,7 @@ Apify.main(async () => {
         datasetId: defaultDatasetId 
     };
 
-    tasks.forEach(task => {
+    tasks.forEach(async (task) => {
         console.log(`Starting task: ${task}...`);
         result = await Apify.callTask(task, taskInput);
         console.log(`Finished task: ${task}.`);
