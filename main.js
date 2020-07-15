@@ -17,10 +17,11 @@ Apify.main(async () => {
         datasetId: defaultDatasetId 
     };
 
-    tasks.forEach(async (task) => {
+    for (const task of tasks) {
         console.log(`Starting task: ${task}...`);
         result = await Apify.callTask(task, taskInput);
-        console.log(`Finished task: ${task}.`);
-    });
+        console.log(`Finished task: ${task} with result:`);
+        console.log(result);
+    }
     console.log('All tasks finished.');
 });
