@@ -7,6 +7,7 @@ Apify.main(async () => {
 
     const {
         tasks,
+        bubbleEndpoint,
         apiEndpoint
     } = input;
 
@@ -14,14 +15,20 @@ Apify.main(async () => {
 
     const taskInput = {
         apiEndpoint,
+        bubbleEndpoint,
         datasetId: defaultDatasetId 
     };
 
     for (const task of tasks) {
         console.log(`Starting task: ${task}...`);
-        result = await Apify.callTask(task, taskInput);
-        console.log(`Finished task: ${task} with result:`);
-        console.log(result);
+        try {
+            result = await Apify.callTask(task, taskInput);
+            console.log(`Finished task: ${task} with result:`);
+            console.log(result);
+        } catch(error) {
+            console.log("Apify error on task", task);
+        }
+
     }
     console.log('All tasks finished.');
 });
