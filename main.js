@@ -16,7 +16,8 @@ Apify.main(async () => {
     const taskInput = {
         apiEndpoint,
         bubbleEndpoint,
-        datasetId: defaultDatasetId 
+        datasetId: defaultDatasetId,
+        mustHaveDate: false
     };
 
     for (const task of tasks) {
