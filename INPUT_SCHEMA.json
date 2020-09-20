@@ -20,6 +20,18 @@
       "type": "string",
       "description": "URL for where you want to send the data to",
       "editor": "textfield"
+    },
+    "gsheetsEndpoint": {
+      "title": "gsheets Endpoint",
+      "type": "string",
+      "description": "URL for google sheets update",
+      "editor": "textfield"
+    },
+    "mustHaveDate": {
+      "title": "Must have date",
+      "type": "boolean",
+      "description": "If checked, the article must have a date of release to be considered valid.",
+      "default": false
     }
   },
   "required": []

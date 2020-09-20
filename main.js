@@ -8,16 +8,18 @@ Apify.main(async () => {
     const {
         tasks,
         bubbleEndpoint,
-        apiEndpoint
+        apiEndpoint,
+        gsheetsEndpoint,
+        mustHaveDate
     } = input;
 
-    const { defaultDatasetId } = Apify.getEnv();
-
+    const { datasetId } = Apify.getEnv();
     const taskInput = {
-        apiEndpoint,
         bubbleEndpoint,
-        datasetId: defaultDatasetId,
-        mustHaveDate: false
+        apiEndpoint,
+        gsheetsEndpoint,
+        datasetId,
+        mustHaveDate
     };
 
     for (const task of tasks) {
